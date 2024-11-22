@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas y Terapias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container
+        {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        .card
+        {
+            border:none !important;
+            display: flex;
+            align-items: center !important;
+            background: transparent !important ;
+            max-width: 600px;
+        }
+
+        .recusar
+        {
+            font-size: .9rem !important;
+        }
+
+        a
+        {
+            color:red;
+        }
+
+        .btn-primary
+        {
+            width: fit-content !important;
+        }
+
+        .btn
+        {
+            width: fit-content !important;
+            padding: .5rem 3.5rem !important;
+        }
+
+        h5
+        {
+            font-family: 'Rampart One' !important;
+            font-weight: 500 !important;
+            font-size: 1.4rem !important;
+        }
+
+        .card-body
+        {   margin-top: .7rem;
+            padding:0 !important;
+        }
+   
+
+        .container img
+        {
+             border-radius:6px !important; 
+             max-width: 400px !important;
+             object-fit: cover;
+        }
+
+        *
+        {
+            font-weight: 600 !important;
+            font-family: 'Montserrat' !important;
+        }
+
+        .btn
+        {
+            border: none !important;
+        }
+
+        .mobile-flex div p
+        {
+            font-family: 'Helvetica Neue' !important;
+            width: 100% !important;
+            font-size: .9rem !important;
+            font-weight: 400 !important;
+        }
+
+        @media(max-width:768px)
+        {
+         .mobile-flex
+         {
+            flex-direction: column !important;
+            width: 100% !important;
+         }
+         .mobile-100
+         {
+            width: 100% !important;
+
+         }
+
+         h4 
+         {
+            font-size: 1rem !important
+         }
+        }
+    </style>
+
+    <style>
+                      @import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+
+         @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
+      @import url('https://fonts.cdnfonts.com/css/amazon-ember');
+      @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rampart+One&display=swap');
+        </style>
+    
+
+</head>
+<div class="p-2 d-flex justify-content-center align-items-center " style="background: rgb(255, 255, 255);">
+    <span style="color:#000000 !important; font-size: .9rem; font-family: 'Montserrat', sans-serif;" class="text-center nav-font">
+      ⚠️Este video solo estará disponible hasta: <span style="color:#000000 !important; font-size: .9   rem; font-family: 'Montserrat', sans-serif;" class="fw-bold nav-font"> <span id="fechaHoy">
+        </span>
+
+      <script>
+        function formatarFecha(fecha) {
+            const diasDeLaSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+            const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        
+            let diaDeLaSemana = diasDeLaSemana[fecha.getDay()];
+            let dia = fecha.getDate();
+            let mes = meses[fecha.getMonth()];
+            let año = fecha.getFullYear();
+        
+            return `${diaDeLaSemana}, ${dia} de ${mes} de ${año}`;
+        }
+        
+        function mostrarFechaDeHoy() {
+            const fechaHoy = new Date();
+            const fechaFormateada = formatarFecha(fechaHoy);
+        
+            // Suponiendo que tienes un elemento en el HTML para mostrar la fecha
+            document.getElementById('fechaHoy').textContent = fechaFormateada;
+        }
+        
+        // Llama esta función cuando la página cargue o cuando sea necesario
+        mostrarFechaDeHoy();
+        
+        </script></span></span>
+  </div>
+<nav class="navbar navbar-expand-lg navbar-dark " style="background: black !important;">
+    <div class="container-fluid mobile-fluid">
+        <div class="d-flex align-items-center"><img class="mobile-margin" style="max-height: 1.5rem; margin-right: 2.5rem;" src="assets\img\menu (7).png">
+            <a class="navbar-brand" ><img src="assets\img\transferir (11).png" style="max-height:4rem;"></a></div>
+        
+      <button class="navbar-toggler" disabled style="border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarT312ext" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <img style=" width:4rem;" src="assets\img\Captura de tela 2023-11-26 043956.png" alt="toggle icon"> <!-- Imagem personalizada -->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="d-flex justify-content-center align-items-center w-100 navbar-nav me-auto mb-2 mb-lg-0">
+         
+          <li class="nav-item">
+            <a class="nav-link " >
+                <span class="circle"></span>
+                <span class="fw-bold" style="font-size: 1rem !important;">Ao vivo</span>  </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" ><span class="fw-bold" style="font-size: 1rem !important;">Política</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><span class="fw-bold" style="font-size: 1rem !important;">Economia</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><span class="fw-bold" style="font-size: 1rem !important;">Esportes</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><span class="fw-bold" style="font-size: 1rem !important;">Pop</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><span class="fw-bold" style="font-size: 1rem !important;">Viagem e Gastronomia</span></a>
+          </li>
+        </ul>
+        <span style="margin-left:1rem;">
+          <span class="header__actions" style="color:#fff !important;">                <img style=" width:4rem  " src="assets\img\Captura de tela 2023-11-26 043956.png" alt="toggle icon"> <!-- Imagem personalizada -->
+
+        </span>
+      </div>
+    </div>
+  </nav>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementsByClassName('navbar').click(); // Simula um clique no botão
+    });
+    </script>
+</header>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap');
+
+
+
+
+
+.main-comentarios div span, .main-comentarios h5
+{
+font-family: 'Amazon Ember', sans-serif !important;
+}
+</style>
+<div class="mt-5 d-none justify-content-center align-items-center flex-column">
+<h3 class="text-center h3-mobile" style="font-family: 'Yanone Kaffeesatz', sans-serif !important;font-size:4rem; width: 70%;">Recupera tu Cabello y Olvida la Calvicie en Solo 4 Semanas con este Método 100% Natural Sin Cirugías ni Medicamentos Costosos</h3>
+
+</div>
+<div class="contaiener">
+<script src="https://cdn.converteai.net/lib/js/smartplayer/v1/sdk.min.js" data-id="64e27b597b941e0009cb3597"></script> <div id="ifr_64e27b597b941e0009cb3597_wrapper" style="margin: 0 auto; width: 100%"> <div style="padding:56.25% 0 0 0;position:relative;" id="ifr_64e27b597b941e0009cb3597_aspect"> <iframe frameborder="0" allowfullscreen src="https://scripts.converteai.net/db5cbd8e-56ce-4e76-a05c-63546f690e24/players/64e27b597b941e0009cb3597/embed.html" id="ifr_64e27b597b941e0009cb3597" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin"></iframe> </div> </div> <style> .elementor-element:has(#ifr_64e27b597b941e0009cb3597_wrapper) { width: 100%; } </style>  </div>
+<span class="mt-2 d-flex justify-content-center text-center" style="color:#000000; font-family: 'Helvetica Neue' !important; font-weight: 500 !important; font-size: 1rem !important;">
+  
+👁️&nbsp;<span style="font-family: 'Helvetica Neue' !important; font-size: 1rem !important;" id="random-number"></span>&nbsp; Pessoas acessando </span>
+
+<div class="container my-4">
+
+<img style="width: 100%;" src="assets\img\Captura de tela 2023-11-28 194819.png">
+
+
+</div>
+
+ 
+<div class="d-flex mt-4 container justify-content-center align-items mobile-flex" style="gap:1rem">
+    <img style="max-width:100% !important; width: 400px; max-width: 100%; object-fit: cover;"  src="assets/img/c8a339de-784d-4f14-82b0-6b77605bce75.jpg"> 
+    
+    <div class=" container text-center mobile-width  d-flex align-items-center justify-content-center flex-column" style="width: 100%;">
+      <h4 style="font-family: 'Mulish', sans-serif; color:#000 !important; font-size: 1.2rem;">
+        Dra. Renata Garrin:      </h4>
+      <p style="font-family: 'Mulish', sans-serif;">
+        
+
+        Nutricionista y Especialista en Pérdida de Peso
+
+Con 17 años de experiencia clínica, la Dra. Renata Garrin es experta en ayudar a las personas a alcanzar sus metas de salud y peso de manera sostenible. Su enfoque combina una nutrición personalizada, cambios en el estilo de vida y apoyo constante, logrando resultados duraderos para miles de pacientes.
+
+"Un enfoque saludable y equilibrado es clave para transformar tu vida", afirma la Dra. Garrin, quien continúa guiando a muchos hacia una mejor calidad de vida.
+
+
+
+
+
+
+      </p>
+  </div></div>
+</span> 
+<div class="mt-3 pt-1" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/dev122062_background_for_healthy_and_diet_fit_--v_6.1_35d0f137-2bb4-4144-9fac-da62eba6216a.png') !important;
+ background-repeat: no-repeat !important; background-position-x: 45% !important; background-size: cover !important;">
+    <div class="container my-4">
+        <!-- Sección 1 -->
+        <div class="card mb-5">
+            <h5 class="card-title text-primary " style="color: #035F97 !important; text-align: center;">RECETA DEL POLVO BARIATRIC</h5>
+            <img style="max-width: 600px; height: 13rem;" src="assets\img\dev122062_woman_decrease_belly_measure_7c8b1943-d174-4f2b-ada9-a5729b1d529b.webp" class="card-img-top" alt="Receta del Polvo Bariatric">
+
+            <div class="card-body text-center">
+                
+                <p class="card-text">
+                    
+        Explora cómo controlar el apetito, acelerar el metabolismo y mejorar la digestión con este método revolucionario y natural, diseñado para transformar tu bienestar. ¡Empieza hoy!               </p>
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <a href="#" style="background: #035F97 !important;" class="btn btn-primary">Ver Más</a>
+                    <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 2 -->
+        <div class="card mb-5">
+            <div class="d-flex align-items-center justify-content-center" style="gap: .5rem; max-width: 400px; width: 100%;">
+                <img style="width: 55%;"  class="card-img-top" src="assets\img\dev122062_decrease_belly_measures_8f13dd55-35dd-4515-889d-2d9685315c8d.webp"  alt="Receta para Aliviar Vientre Hinchado">
+
+                 <h5 style="width: 45%;" class="card-title text-success ">RECETA PARA ALIVIAR VIENTRE HINCHADO</h5>
+            </div>
+            <div class="card-body text-center">
+                <p class="card-text">
+                    Descubre cómo aliviar el vientre hinchado de manera natural con ingredientes simples y efectivos, usados por quienes buscan bienestar y salud en su día a día. ¡Resultados que te sorprenderán!
+
+
+
+
+
+
+                </p>
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <a href="#" class="btn btn-success">Ver Más</a>
+                    <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Sección 2 -->
+        <div class="card mb-5">
+            <div class="d-flex align-items-center justify-content-center" style="gap: .5rem; max-width: 400px; width: 100%;">
+                <h5 style="width: 45%; text-align: right; color: #880305 !important;" class="card-title text-success ">TERAPIA DEL CHOQUE TERMICO</h5>
+
+                <img style="width: 55%;"  class="card-img-top" src="assets\img\dev122062_termic_shock_teraphy_443c7eea-6181-4d86-b57e-4eaff9892965.webp"  alt="Receta para Aliviar Vientre Hinchado">
+
+            </div>
+            <div class="card-body text-center">
+                <p class="card-text">
+                    Conoce el secreto para reafirmar la piel, reducir la flacidez y lucir radiante con este tratamiento innovador y fácil de realizar en casa. ¡Notarás la diferencia desde la primera aplicación!
+
+
+
+
+
+
+                </p>
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <a href="#" style="background: #880305 !important;" class="btn btn-success">Ver Más</a>
+                    <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Sección 3 -->
+        <div class="card mb-5" style="position: relative;">
+            <img style="max-width: 600px;" src="assets\img\dev122062_background_for_healthy_and_diet_fit_app_--v_6.1_571f88da-dc6f-4ffb-b95c-ab46ade19d72-removebg-preview.png" class="card-img-top" alt="Terapia del Choque Térmico">
+            <div class="card-body text-center">
+                <h5 class="card-title text-danger " style="color:0360AB !important; position: absolute; top:0; left: 20px;  transform: rotate(-30deg);">BARI APP</h5>
+                <p class="card-text">
+                    Adelgazar de forma saludable es posible. Con BARI APP, aprende hábitos efectivos para bajar de peso sin dietas extremas, mejorando tu bienestar físico y emocional. ¡Empieza hoy y siente la diferencia!                </p>
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <a href="#" style="background: #0360AB !important;" class="btn btn-danger">Ver Más</a>
+                    <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+                </div>
+            </div>
+        </div>
+
+       <!-- Sección 1 -->
+       <div class="card mb-5">
+        <h5 class="card-title text-primary " style="color: #540356 !important; text-align: center;">3 ESFOLIANTES  NATURALES</h5>
+        <img style="max-width: 600px; height: 13rem;" src="assets\img\dev122062_skin_exfoliant_e96d2b59-f754-4238-aa52-9a3a3efb6638.webp" class="card-img-top" alt="Receta del Polvo Bariatric">
+
+        <div class="card-body text-center">
+            
+            <p class="card-text">
+                Aprende lo que los medios te han estado ocultando sobre cómo lograr un cuerpo bello con métodos 100% probados, utilizados por los artistas más cotizados de la actualidad.
+            </p>
+            <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                <a style="background: #540356;" href="#" class="btn btn-primary">Ver Más</a>
+                <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección 2 -->
+    <div class="card mb-5">
+        <div class="d-flex align-items-center justify-content-center" style="gap: .5rem; max-width: 400px; width: 100%;">
+            <img style="width: 55%;"  class="card-img-top" src="assets\img\dev122062_TONIC_TO_END_JOINT_PAIN_33d1e1d8-da71-4cbf-8515-f2d506e0f40b.webp"  alt="Receta para Aliviar Vientre Hinchado">
+
+             <h5 style="width: 45%; color:#FF8000 !important;" class="card-title ">TONICO PARA ACABAR COM EL DOLOR</h5>
+        </div>
+        <div class="card-body text-center">
+            <p class="card-text">
+                Aprende lo que los medios te han estado ocultando sobre cómo lograr un vientre plano con métodos 100% probados, utilizados por los artistas más cotizados de la actualidad.
+            </p>
+            <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                <a style="background: #FF8000  !important;" href="#" class="btn btn-success">Ver Más</a>
+                <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+            </div>
+        </div>
+    </div>
+
+      <!-- Sección 1 -->
+      <div class="card mb-5">
+        <h5 class="card-title text-primary " style="color: #B00E0E !important; text-align: center;">TÉ MILENARIO JAPONES</h5>
+        <img style="max-width: 600px; height: 13rem;" src="assets\img\shutterstock_517285561 (1).jpg" class="card-img-top" alt="Receta del Polvo Bariatric">
+
+        <div class="card-body text-center">
+            
+            <p class="card-text">
+                También aprenderás a preparar el Té Milenario Japonés, una infusión que activa tu metabolismo, mejora la digestión y potencia tu bienestar. Fácil de hacer y perfecta para sumar hábitos saludables a tu rutina diaria. ¡Ideal para un estilo de vida lleno de energía y equilibrio!            </p>
+            <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                <a href="#" style="background: #B00E0E !important;" class="btn btn-primary">Ver Más</a>
+                <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección 2 -->
+    <div class="card mb-5">
+        <div class="d-flex align-items-center justify-content-center" style="gap: .5rem; max-width: 400px; width: 100%;">
+            <h5 style="width: 45%; text-align: right;" class="card-title text-success ">RECETA PARA ALIVIAR VIENTRE HINCHADO</h5>
+
+            <img style="width: 55%;"  class="card-img-top" src="assets\img\dev122062_termic_shock_teraphy_443c7eea-6181-4d86-b57e-4eaff9892965.webp"  alt="Receta para Aliviar Vientre Hinchado">
+
+        </div>
+        <div class="card-body text-center">
+            <p class="card-text">
+                Aprende lo que los medios te han estado ocultando sobre cómo lograr un vientre plano con métodos 100% probados, utilizados por los artistas más cotizados de la actualidad.
+            </p>
+            <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                <a href="#" class="btn btn-success">Ver Más</a>
+                <a class="recusar">No, me gustaría rechazar esta oferta.</a>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="nav d-flex mt-3 p-3 justify-content-between align-items-center" style="background: #f3f3f3;">
+          <img style="max-height: 1.2rem; height:1.2rem;" src="assets\img\Captura_de_tela_2024-02-01_193657-removebg-preview (1) (1).png"> <img src="assets\img\Captura de tela 2023-11-29 110318.png" style="max-height:1.3rem; height:1.3rem;">
+        </div>
+        <div class="mb-3 mt-2 w-100" style="border-bottom: solid 1px gray;"><h4 class="fw-bold" style="font-family: 'Helvetica Neue', sans-serif;">Beneficios de Recetas y Terapias Naturales para un Estilo de Vida Saludable</h4>
+        </div>
+      <div class="d-flex mobile-flex  justify-content-center align-items-start" style="gap:1rem">
+
+       <div class="align-items-start d-flex flex-column w-50 mobile-100">
+       
+        <p style="font-size:1rem;font-family: 'Helvetica Neue', sans-serif;"><span style="font-style: italic;font-size:1rem;font-family: 'Helvetica Neue', sans-serif;">Fecha:</span>&nbsp;&nbsp;22 de noviembre de 2024</p>
+        <p style="font-size:1rem;font-family: 'Helvetica Neue', sans-serif;"><span style="font-style: italic;font-size:1rem;font-family: 'Helvetica Neue', sans-serif;">Fuente:</span>&nbsp;&nbsp;Expertos en Salud y Bienestar
+        </p>
+          
+        <p style="font-size:1rem;font-family: 'Helvetica Neue', sans-serif;"><span style="font-style: italic;font-size:1rem;font-family: 'Helvetica Neue', sans-serif;">Resumen:</span>&nbsp;&nbsp;Las terapias naturales, como el uso de recetas específicas para reducir la inflamación abdominal y mejorar el metabolismo, están ganando popularidad gracias a su efectividad comprobada. Por ejemplo, la implementación de métodos como la receta para aliviar el vientre hinchado o la terapia de choque térmico ha demostrado resultados significativos en la reducción de grasa corporal y el aumento del bienestar general. Estas prácticas, basadas en principios científicos y naturales, no solo ofrecen alternativas seguras, sino también sostenibles para quienes buscan mejorar su salud sin depender exclusivamente de medicamentos.</p>
+        <div class="d-flex">
+
+        <p style="font-size:1rem;font-family: 'Helvetica Neue', sans-serif;">Compart ... <i class="bi bi-facebook"></i>&nbsp;</p>
+
+          <i class="bi bi-twitter"></i>&nbsp;
+          <i class="bi bi-pinterest"></i>&nbsp;
+          <i class="bi bi-linkedin"></i>&nbsp;
+          <i class="bi bi-envelope-fill"></i>
+        </div>
+
+
+
+      </div> 
+      <div class="align-items-start d-flex flex-column w-50 mobile-100">
+       
+        <p style="font-size:1rem;font-family: 'Helvetica Neue', sans-serif;">"Estas recetas y terapias nos brindan una forma accesible y eficaz de abordar problemas comunes como la inflamación abdominal o la dificultad para mantener un peso saludable. Al combinar factores de estilo de vida con estas técnicas comprobadas, las personas pueden experimentar mejoras significativas en su salud general", afirma la Dra. Elena Martínez, especialista en nutrición y bienestar natural.</p>
+       
+      </div> 
+    </div>
+    </div>  
+    </div>
+    <footer class="fluid-container p-4" style="background: black; color:#fff !important;">
+        <div class="container mobile-flex d-flex flex-column align-items-center justify-content-between text-center" style="gap:1rem;">
+       
+            <span style="font-size:.6rem; color:#bcb6b6;" class="text-center copyright-font">Este site e todo o seu conteúdo são protegidos pelas leis de direitos autorais e propriedade intelectual de todos os países. O autor reserva-se o direito de reclamar uma indenização caso estas condições não sejam respeitadas.
+            </span>
+            </span>
+       
+        </div>
+    </footer>
+    
+<script>
+    function updateNumber() {
+      var min = 2170;
+      var max = 2200;
+      var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById('random-number').textContent = randomNumber;
+    }
+    
+    setInterval(updateNumber, 1000);  // Atualiza o número a cada 1 segundo
+    updateNumber();  // Chama a função uma vez no início para preencher o span inicialmente
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
